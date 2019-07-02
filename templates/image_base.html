@@ -33,13 +33,25 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="index.html"><span class="flaticon-camera"></span>OCR Gallery</a></h1>
+
+
+
+
+
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li class="colorlib-active"><a href="blog.html">Image #1</a></li>
-					<li><a href="blog.html">Image #2</a></li>
+				{% set active_page = title %}
+                {% for page in pages %}
+                     <li {% if page.title == active_page %} class="colorlib-active" {% endif %}><a href="./{{ page.title }}.html">{{ page.title|replace("_", " ")|title }}</a></li>
+                {% endfor %}   
 				</ul>
 			</nav>
+
+   
+
+
+
 
 		</aside> <!-- END COLORLIB-ASIDE -->
 

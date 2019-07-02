@@ -31,6 +31,7 @@ for page in pages:
     template_html = open("templates/image_base.html").read()
     template = Template(template_html)
     output = template.render(
+    	pages=pages,
         image_source=page['image_path'],
         title=page['title'],
         image_text= 'image text will go here',
