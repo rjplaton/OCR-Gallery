@@ -9,6 +9,8 @@ verify_ssl = true
 jinja2 = "*"
 pillow = "*"
 pytesseract = "*"
+dlib = "*"
+face-recognition = "*"
 
 [requires]
 python_version = "3.7"
