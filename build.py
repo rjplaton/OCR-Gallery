@@ -60,7 +60,16 @@ for page in pages:
     open(page['output_path'], 'w+').write(output)
     print('Successfully processed:', page['image_path'], ' | Saved to:', page['output_path'])
 
-print('\n'.join(map(str, pages))) 
+def update_index_file():
+    template_html = open("templates/base.html").read()
+    template = Template(template_html)
+    output = template.render(
+        pages=pages,
+        image_source=page['image_path'],
+        title=page['title'],
+    )
+    open("docs/index.html", 'w+').write(output)
 
+update_index_file()
 
 
