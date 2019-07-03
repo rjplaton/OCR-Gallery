@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
 
@@ -74,26 +75,32 @@
 
 			<section class="ftco-section">
 	    	<div class="container">
-	    		<div class="row">
+	    		<div class="row">	    			
 	    			<div class="col-lg-9 ftco-animate">
+<div class='face_wrapper'>		    				
+	              <img src="{{ image_source }}" alt="{{ title|replace("_", " ")|title }}"  > <!-- removed class="img-fluid" sas it was interfering with below -->
 
-			{% for page in pages %}
+
+              
+	              			{% for page in pages %}
 				{% for face in page['face_locations'] %}
 					{% if page.title == active_page %}
-		<div
+		<div class='face'
 			style="
 				position: absolute; 
 				border: 5px solid blue; 
+				opacity: 0.6;
 				top: {{ face[0] }}px; 
-				left: {{ face[3] }}px; 
-				width: 10px;
-				height: 10px;
+				left: {{ face[3] +10 }}px; 
+				width: {{ face[1] - face[3] }}px;
+				height: {{ face[2] - face[0] }}px;
+
 				"> 
 		</div>
 					{% endif %}
 				{% endfor %}
 			{% endfor %}
-	              <img src="{{ image_source }}" alt="" class="img-fluid">
+</div>			
 	            </p>
 	            <h3 class="mb-3 mt-5 font-weight-bold">Text Found in the Image by Tesseract:</h3>
 	            <p>{{ image_text }}</p>

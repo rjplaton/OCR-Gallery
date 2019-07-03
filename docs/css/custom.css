@@ -1,0 +1,12 @@
+.image-face-wrapper {
+    position: relative;
+}
+
+.face:hover {
+    opacity: 1;
+    background: rgb(0,0,255,0.1);
+}
+
+#colorlib-aside {
+	overflow-y: auto;
+}
