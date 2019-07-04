@@ -37,10 +37,10 @@
 
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a class="colorlib-active" href="index.html">Home</a></li>
 				{% set active_page = title %}
                 {% for page in pages %}
-                     <li {% if page.title == active_page %} class="colorlib-active" {% endif %}><a href="./{{ page.title }}.html">{{ page.title|replace("_", " ")|title }}</a></li>
+                     <li><a href="./{{ page.title }}.html">{{ page.title|replace("_", " ")|title }}</a></li>
                 {% endfor %}   
 				</ul>
 			</nav>
@@ -60,7 +60,10 @@
 	  
 	           
 	            <h1 class="mb-3 bread">OCR Gallery Project</h1>
-	            <p>A gallery of images that are processed by Tesseract to find text in the image and the Python Face Recognition library to, well find faces! </p>
+	            <p>A gallery of images that are processed by Tesseract and the Python Face Recognition library.</p>
+	            <p>Facial Recognition outputs values for where the face in an image is and I use those values to draw a square over the face using CSS.</p>
+	            <p>Tesseract attempts to figure out what text is within the image and I take that output and display it under the image.</p>
+
 	          </div>
 	        </div>
 				</div>
@@ -106,6 +109,7 @@
 	        <div class="row">
 	          <div class="col-md-12">
 
+<p>For more about me, visit <a href="http://rjplaton.com">rjplaton.com</a></p>
 	            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
